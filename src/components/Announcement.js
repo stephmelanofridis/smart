@@ -4,7 +4,7 @@ import websiteData from '../utils/websiteData';
 
 const Container = styled.div`
     height: 30px;
-    background-color: var(--darkpink);
+    background-color: var(--richblack);
     color: var(--white);
     display: flex;
     align-items: center;
