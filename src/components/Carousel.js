@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -9,6 +9,7 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     position: relative;
+    overflow: hidden;
 `
 const Arrow = styled.div`
     width: 50px;
@@ -26,9 +27,13 @@ const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+    z-index: 2;
 `
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    transition: all 1.5s ease;
+    transform: translateX(${props => props.carouselIndex * -100}vw);
 `
 const Slide = styled.div`
     display: flex;
@@ -40,13 +45,13 @@ const ImgContainer = styled.div`
     max-width: 100vw;
     max-height: 100vh;
 `
-const InfoContainer = styled.div`
-    flex: 1;
-    padding: 50px;
-`
-const Title = styled.h1`
-    font-size: 70px;
-`
+// const InfoContainer = styled.div`
+//     flex: 1;
+//     padding: 50px;
+// `
+// const Title = styled.h1`
+//     font-size: 70px;
+// `
 const Description = styled.p`
     color: white;
     margin: 50px 0px;
@@ -86,12 +91,30 @@ const Image = styled.img`
 
 `
 const Carousel = () => {
+
+    const [carouselIndex, setCarouselIndex] = useState(0);
+
+    const handleClick = (direction) => {
+        if (direction === 'left') {
+            setCarouselIndex(0)
+        } else {
+            setCarouselIndex(1)
+        }
+    }
+
     return (
         <Container>
-            <Arrow direction='left'>
+            <Arrow direction='left' onClick={() => handleClick('left')}>
                 <KeyboardArrowLeftIcon />
             </Arrow>
-            <Wrapper>
+            <Wrapper carouselIndex={carouselIndex}>
+                <Slide>
+                    <ImgContainer>
+                        <Image src={websiteData.carouselCombo1} />
+                        <Description>Original collage artwork made from a variety of modern and vintage magazines.</Description>
+                        <Button>SHOP NOW</Button>
+                    </ImgContainer>
+                </Slide>
                 <Slide>
                     <ImgContainer>
                         <Image src={websiteData.carouselCombo1} />
@@ -100,7 +123,7 @@ const Carousel = () => {
                     </ImgContainer>
                 </Slide>
             </Wrapper>
-            <Arrow direction='right'>
+            <Arrow direction='right' onClick={() => handleClick('right')}>
                 <KeyboardArrowRightIcon />
             </Arrow>
         </Container>
