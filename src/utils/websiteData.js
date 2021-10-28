@@ -4,6 +4,7 @@ export default {
     carouselImage1: require('../assets/carousel-image-1.jpeg').default,
     carouselText1: require('../assets/carousel-text-collage.svg').default,
     carouselCombo1: require('../assets/carousel-combo-1.jpg').default,
+    carouselCombo2: require('../assets/carousel-combo-2.jpg').default,
 
     categories: [
         {

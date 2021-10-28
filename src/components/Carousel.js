@@ -6,7 +6,7 @@ import websiteData from '../utils/websiteData';
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -30,20 +30,25 @@ const Arrow = styled.div`
     z-index: 2;
 `
 const Wrapper = styled.div`
-    height: 100%;
+    max-height: 100%;
     display: flex;
     transition: all 1.5s ease;
     transform: translateX(${props => props.carouselIndex * -100}vw);
 `
 const Slide = styled.div`
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
 `
 const ImgContainer = styled.div`
     flex: 1;
     position: relative;
     max-width: 100vw;
     max-height: 100vh;
+`
+const Image = styled.img`
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-x: hidden;
 `
 // const InfoContainer = styled.div`
 //     flex: 1;
@@ -83,13 +88,6 @@ const Button = styled.button`
     border-radius: 5px;
     text-shadow: 2px 2px #bb5352;
 `
-
-const Image = styled.img`
-     max-width: 100vw;
-     max-height: 100vh;
-     overflow-x: hidden;
-
-`
 const Carousel = () => {
 
     const [carouselIndex, setCarouselIndex] = useState(0);
@@ -117,8 +115,8 @@ const Carousel = () => {
                 </Slide>
                 <Slide>
                     <ImgContainer>
-                        <Image src={websiteData.carouselCombo1} />
-                        <Description>Original collage artwork made from a variety of modern and vintage magazines.</Description>
+                        <Image src={websiteData.carouselCombo2} />
+                        <Description>Restored used and antique furniture.</Description>
                         <Button>SHOP NOW</Button>
                     </ImgContainer>
                 </Slide>
