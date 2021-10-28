@@ -9,7 +9,7 @@ const CategoryItem = ({ item }) => {
     `
     return (
         <Container>
-            Category Item
+
         </Container>
     )
 }

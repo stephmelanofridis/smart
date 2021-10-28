@@ -37,7 +37,6 @@ const Wrapper = styled.div`
 `
 const Slide = styled.div`
     display: flex;
-    flex-wrap: wrap;
 `
 const ImgContainer = styled.div`
     flex: 1;
