@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import logo from '../assets/logo-black.svg'
+import logo from '../assets/logo-black.svg';
 import '../App.css';
 
 const Container = styled.div`
