@@ -3,6 +3,7 @@ import Announcement from '../components/Announcement';
 import Navbar from '../components/Navbar';
 import Carousel from '../components/Carousel';
 import Categories from '../components/Categories';
+import Products from '../components/Products';
 import '../App.css';
 
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Navbar />
             <Carousel />
             <Categories />
+            <Products />
         </div>
     )
 }

@@ -19,7 +19,7 @@ export default {
         },
     ],
 
-    products: [
+    popularProducts: [
         {
             id: 1,
             img: require('../assets/placeholder.jpg').default,
