@@ -9,13 +9,32 @@ export default {
     categories: [
         {
             id: 1,
-            img: require('../assets/placeholder.jpg'),
-            title: 'Category 1',
+            img: require('../assets/collage-art.jpeg').default,
+            title: 'Collage Art',
         },
         {
             id: 2,
-            img: require('../assets/placeholder.jpg'),
-            title: 'Category 2',
+            img: require('../assets/restored-furniture.jpeg').default,
+            title: 'Restored Furniture',
+        },
+    ],
+
+    products: [
+        {
+            id: 1,
+            img: require('../assets/placeholder.jpg').default,
+        },
+        {
+            id: 2,
+            img: require('../assets/placeholder.jpg').default,
+        },
+        {
+            id: 3,
+            img: require('../assets/placeholder.jpg').default,
+        },
+        {
+            id: 4,
+            img: require('../assets/placeholder.jpg').default,
         },
     ]
 }

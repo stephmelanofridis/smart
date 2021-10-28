@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import CategoryItem from '../components/CategoryItem';
 import websiteData from '../utils/websiteData';
+import CategoryItem from '../components/CategoryItem';
 
 const Categories = () => {
 
     const Container = styled.div`
         display: flex;
-        padding: 
+        padding: 20px;
+        justify-content: space-between;
     `
     return (
         <Container>
