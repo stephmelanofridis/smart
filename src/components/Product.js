@@ -4,6 +4,20 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
+const Info = styled.div`
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+`
 const Container = styled.div`
     flex: 1;
     margin: 5px;
@@ -12,22 +26,15 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    background-color: var(--white);
     position: relative;
+
+    &:hover ${Info} {
+        opacity: 1;
+    }
 `
 const Image = styled.div`
     height: 75%;
-`
-const Info = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `
 const Icon = styled.div`
     width: 40px;
@@ -41,8 +48,10 @@ const Icon = styled.div`
 
     &:hover {
         background-color: black;
+        transform: scale(1.1);
         color: white;
         cursor: pointer;
+        transition: all 0.5s ease;
     }
 `
 
