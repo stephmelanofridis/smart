@@ -36,5 +36,7 @@ export default {
             id: 4,
             img: require('../assets/placeholder.jpg').default,
         },
-    ]
+    ],
+
+    placeholder: require('../assets/placeholder.jpg').default,
 }

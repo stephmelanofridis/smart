@@ -1,11 +1,12 @@
-import Home from './pages/Home';
-import ProductList from './pages/ProductList';
+import HomePage from './pages/HomePage';
+import ProductListPage from './pages/ProductListPage';
+import ProductPage from './pages/ProductPage';
 import './App.css';
 
 
 const App = () => {
   return (
-    <ProductList />
+    <ProductPage />
   );
 }
 
