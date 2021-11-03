@@ -5,11 +5,14 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import CartPage from './pages/CartPage';
 import './App.css';
+import Navbar from './components/Navbar';
+import Announcement from './components/Announcement';
+
 
 
 const App = () => {
   return (
-    <CartPage />
+    <HomePage />
   );
 }
 

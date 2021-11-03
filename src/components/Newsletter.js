@@ -13,9 +13,9 @@ const Container = styled.div`
     margin-top: 50px;
 `
 const Title = styled.h1`
-    color: var(--darkpink);
-    font-family: john-doe, sans-serif;
+    font-family: courier-prime, monospace;
     font-weight: 400;
+    font-style: normal;
     font-style: normal;
     font-size: 70px;
     text-align: center;

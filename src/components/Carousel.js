@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { mobile, tablet, medium } from '../responsive';
 import websiteData from '../utils/websiteData';
 
 const Container = styled.div`
@@ -28,6 +29,7 @@ const Arrow = styled.div`
     cursor: pointer;
     opacity: 0.5;
     z-index: 2;
+    ${medium({ width: '20px', height: '20px' })}
 `
 const Wrapper = styled.div`
     max-height: 100%;
@@ -70,6 +72,7 @@ const Description = styled.p`
     -ms-transform: translate(-50%, -50%);
     padding: 12px 24px;
     text-shadow: 2px 2px black;
+    ${medium({ fontSize: '15px', letterSpacing: '2px' })}
 `
 const Button = styled.button`
     position: absolute;
@@ -86,7 +89,9 @@ const Button = styled.button`
     cursor: pointer;
     border-radius: 5px;
     text-shadow: 2px 2px #bb5352;
+    ${medium({ fontSize: '12px', top: '70%', left: '73%' })}
 `
+
 const Carousel = () => {
 
     const [carouselIndex, setCarouselIndex] = useState(0);
