@@ -1,14 +1,15 @@
 import HomePage from './pages/HomePage';
 import ProductListPage from './pages/ProductListPage';
 import ProductPage from './pages/ProductPage';
-import Register from './pages/RegisterPage';
-import Login from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import CartPage from './pages/CartPage';
 import './App.css';
 
 
 const App = () => {
   return (
-    <Login />
+    <CartPage />
   );
 }
 
