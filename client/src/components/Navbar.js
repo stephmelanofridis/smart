@@ -52,18 +52,18 @@ const Language = styled.span`
     }
     ${medium({ display: 'none' })}
 `
-const SearchContainer = styled.div`
-    border: 0.5px solid lightgrey;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-`
-const Input = styled.input`
-    border: none;
-    background-color: var(--white);
-    ${medium({ width: '50px' })}
-`
+// const SearchContainer = styled.div`
+//     border: 0.5px solid lightgrey;
+//     display: flex;
+//     align-items: center;
+//     margin-left: 25px;
+//     padding: 5px;
+// `
+// const Input = styled.input`
+//     border: none;
+//     background-color: var(--white);
+//     ${medium({ width: '50px' })}
+// `
 const MenuItem = styled.div`
     font-size: 14px:
     cursor: point;
@@ -84,11 +84,11 @@ const Navbar = () => {
                 </Left>
                 <Center></Center>
                 <Right>
-                    <Language>EN</Language>
+                    {/* <Language>EN</Language>
                     <SearchContainer>
                         <SearchIcon style={{ color: 'grey', fontSize: 16 }} />
                         <Input placeholder='search' />
-                    </SearchContainer>
+                    </SearchContainer> */}
                     <MenuItem>Sign Up</MenuItem>
                     <MenuItem>Login</MenuItem>
                     <MenuItem>

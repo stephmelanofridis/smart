@@ -1,23 +1,47 @@
-const express = require('express');
-const path = require('path');
-const db = require('./config/connection');
-const routes = require('./routes');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+// const express = require('express');
+// const path = require('path');
+// const db = require('./config/connection');
+// const routes = require('./routes');
+// const dotenv = require('dotenv');
+// const mongoose = require('mongoose');
 
+// const app = express();
+// const PORT = process.env.PORT || 3000;
+
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../client/build')));
+// }
+
+// app.use(routes);
+
+// db.connect('open', () => {
+//     app.listen(PORT, () => console.log(`Now running on localhost:${PORT}`));
+// });
+
+const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const userRoute = require("./routes/user");
 
-app.use(express.urlencoded({ extended: true }));
+dotenv.config();
+
+mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => console.log('Connected to smartshop database.'))
+    .catch((err) => {
+        console.log(err);
+    });
+
+
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
-}
+app.use("/api/users", userRoute);
 
-app.use(routes);
-
-db.connect('open', () => {
-    app.listen(PORT, () => console.log(`Now running on localhost:${PORT}`));
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Server is running.');
 });
 
