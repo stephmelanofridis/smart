@@ -1,26 +1,73 @@
-const express = require("express");
+
+const express = require('express');
+const path = require('path');
+const { ApolloServer } = require('apollo-server-express');
+const db = require('./config/connection');
+const { typeDefs, resolvers } = require('./schemas');
+
 const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const userRoute = require("./routes/user");
-const productRoute = require("./routes/product");
-
-dotenv.config();
-
-mongoose
-    .connect(process.env.MONGO_URL)
-    .then(() => console.log('Connected to smartshop database.'))
-    .catch((err) => {
-        console.log(err);
-    });
-
-
-app.use(express.json());
-
-app.use("/api/users", userRoute);
-app.use("/api/products", productRoute);
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Server is running.');
+const PORT = process.env.PORT || 3001;
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
 });
 
+server.applyMiddleware({ app });
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// if we're in production, serve client/build as static assets
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        // log where we can go to test our GQL API
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    });
+});
+
+// const express = require('express');
+// const { ApolloServer, gql } = require('apollo-server-express');
+// const { typeDefs, resolvers } = require('./schemas');
+// const path = require('path');
+
+// const db = require('./config/connection');
+
+// const PORT = process.env.PORT || 3000;
+// const app = express();
+
+// const server = new ApolloServer({
+//     typeDefs,
+//     resolvers,
+// });
+
+// server.applyMiddleware({ app });
+
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
+
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../client/build')));
+// }
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+
+// const typeDefs=gql`
+//     type:`
+
+// db.once('open', () => {
+//     app.listen(PORT, () => {
+//         console.log(`API server running on port ${PORT}!`);
+//         console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+//     });
+// });
