@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URL || 3000, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/smartshop', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: false
 });
 
 module.exports = mongoose.connection;
