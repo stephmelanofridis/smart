@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const UserSchema = new Schema({
     username: {
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         required: true,
         minlength: 10
     },
-    orders: [Order.Schema],
+    orders: [Order.schema],
     isAdmin: {
         type: Boolean,
         default: false,
