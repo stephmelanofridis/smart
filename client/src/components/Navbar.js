@@ -1,12 +1,13 @@
 import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
 import styled from 'styled-components';
-import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import logo from '../assets/logo-black.svg';
+import Authentication from '../utils/authentication';
 import { mobile, medium } from '../responsive';
+import { Link } from 'react-router-dom';
 import '../App.css';
+
 
 const Container = styled.div`
     height: 130px;
@@ -42,16 +43,16 @@ const Right = styled.div`
     padding-top: 20px;
     ${medium({ justifyContent: 'center', flex: 2 })}
 `
-const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
-    &:hover {
-        font-weight: 700;
-        text-shadow: var(--darkpink);
-        cursor: pointer;
-    }
-    ${medium({ display: 'none' })}
-`
+// const Language = styled.span`
+//     font-size: 14px;
+//     cursor: pointer;
+//     &:hover {
+//         font-weight: 700;
+//         text-shadow: var(--darkpink);
+//         cursor: pointer;
+//     }
+//     ${medium({ display: 'none' })}
+// `
 // const SearchContainer = styled.div`
 //     border: 0.5px solid lightgrey;
 //     display: flex;
@@ -89,10 +90,11 @@ const Navbar = () => {
                         <SearchIcon style={{ color: 'grey', fontSize: 16 }} />
                         <Input placeholder='search' />
                     </SearchContainer> */}
-                    <MenuItem>Sign Up</MenuItem>
-                    <MenuItem>Login</MenuItem>
+                    <MenuItem><Link to='/signup'>Sign Up</Link></MenuItem>
+                    <MenuItem><Link to='/login'>Login</Link></MenuItem>
+                    <MenuItem><Link to='/newproduct'>Add new product</Link></MenuItem>
                     <MenuItem>
-                        <Badge badgeContent={4} color="primary">
+                        <Badge badgeContent={0} color='secondary'>
                             <ShoppingCartIcon />
                         </Badge>
                     </MenuItem>

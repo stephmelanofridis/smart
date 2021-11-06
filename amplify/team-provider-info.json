@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-smartshop-dev-173417-authRole",
+      "UnauthRoleArn": "arn:aws:iam::176928387994:role/amplify-smartshop-dev-173417-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::176928387994:role/amplify-smartshop-dev-173417-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-smartshop-dev-173417-deployment",
+      "UnauthRoleName": "amplify-smartshop-dev-173417-unauthRole",
+      "StackName": "amplify-smartshop-dev-173417",
+      "StackId": "arn:aws:cloudformation:us-east-2:176928387994:stack/amplify-smartshop-dev-173417/94fca030-3ecb-11ec-8ef8-06520496ed68",
+      "AmplifyAppId": "d38zfk75p7mq9t"
+    },
+    "categories": {
+      "auth": {
+        "smartshop928622a7": {}
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import Authentication from '../utils/authentication';
 import websiteData from '../utils/websiteData';
 
 const Container = styled.div`
@@ -50,28 +54,56 @@ const LinkContainer = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
 `
-const Link = styled.a`
-    margin: 5px 0;
-    font-size: 12px;
-    color: var(--darkpink);
-    cursor: pointer;
-`
+// const Link = styled.a`
+//     margin: 5px 0;
+//     font-size: 12px;
+//     color: var(--darkpink);
+//     cursor: pointer;
+// `
 
-const Login = () => {
+function Login(props) {
+    const [formState, setFormState] = useState({ username: '', password: '' });
+    const [login, { error }] = useMutation(LOGIN);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const mutationResponse = await login({
+                variables: { username: formState.username, password: formState.password },
+            });
+            const token = mutationResponse.data.login.token;
+            Authentication.login(token);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
     return (
         <Container>
             <Wrapper>
                 <Title>Login</Title>
-                <Form>
-                    <Input placeholder='Username' />
-                    <Input placeholder='Password' />
+                <Form onSubmit={handleFormSubmit}>
+                    <Input placeholder='Username' name="username" type="username" id="username" onChange={handleChange} />
+                    <Input placeholder='Password' name="password" type="password" id="password" onChange={handleChange} />
+                    {error ? (
+                        <div>
+                            <p className="error-text">The provided credentials are incorrect</p>
+                        </div>
+                    ) : null}
                     <ButtonContainer>
-                        <Button>Login</Button>
+                        <Button type="submit">Login</Button>
                     </ButtonContainer>
 
                     <LinkContainer>
-                        <Link>Forgot password</Link>
-                        <Link>Create a new account</Link>
+                        <Link to='/signup'>Create a new account</Link>
                     </LinkContainer>
                 </Form>
             </Wrapper>
