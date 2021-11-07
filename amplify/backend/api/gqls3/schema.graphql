@@ -1,7 +1,0 @@
-type Product @model {
-  id: ID!
-  title: String!
-  description: String
-  price: Int
-  image: String
-}

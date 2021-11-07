@@ -8,12 +8,7 @@ const db = require('./config/connection');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
 const app = express();
-const { graphqlHTTP } = require('express-graphql');
 
-
-app.use('graphql', graphqlHTTP({
-
-}));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

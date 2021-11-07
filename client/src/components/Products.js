@@ -66,11 +66,8 @@ function Products() {
                     ))}
                 </div>
             ) : (
-                <h3>You haven't added any products yet!</h3>
+                <h3>There are no products yet.</h3>
             )}
-            {/* {websiteData.popularProducts.map((item) => (
-                <Product item={item} key={item.id} />
-            ))} */}
         </Container>
     )
 }
