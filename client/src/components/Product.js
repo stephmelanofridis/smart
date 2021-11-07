@@ -59,7 +59,7 @@ const Icon = styled.div`
 const Product = ({ item }) => {
     return (
         <Container>
-            <Image src={item.img} />
+            <Image />
             <Info>
                 <Icon>
                     <ShoppingCartIcon />

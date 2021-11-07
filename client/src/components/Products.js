@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import websiteData from '../utils/websiteData';
-import Product from './Product';
-import { useStoreContext } from '../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../utils/siteActions';
-import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS } from '../utils/queries';
-import { idbPromise } from '../utils/helpers';
 import * as Constants from '../utils/constants';
 import axios from 'axios';
 
@@ -81,7 +74,7 @@ function Products() {
             {data.products.map(item => (
                 <Wrapper>
                     <ImgContainer>
-                        <Image src={websiteData.placeholder} />
+                        <Image alt={item.title} src={item.image} />
                     </ImgContainer>
                     <InfoContainer>
                         <Title key={item.Title}>{item.title}</Title>
@@ -97,62 +90,5 @@ function Products() {
     )
 
 }
-
-// function Products() {
-//     const [state, dispatch] = useStoreContext();
-//     const { currentCategory } = state;
-//     const { loading, data } = useQuery(QUERY_PRODUCTS);
-
-//     useEffect(() => {
-//         if (data) {
-//             dispatch({
-//                 type: UPDATE_PRODUCTS,
-//                 products: data.products,
-//             });
-//             data.products.forEach((product) => {
-//                 idbPromise('products', 'put', product);
-//             });
-//         } else if (!loading) {
-//             idbPromise('products', 'get').then((products) => {
-//                 dispatch({
-//                     type: UPDATE_PRODUCTS,
-//                     products: products,
-//                 });
-//             });
-//         }
-//     }, [data, loading, dispatch]);
-
-//     function filterProducts() {
-//         if (!currentCategory) {
-//             return state.products;
-//         }
-
-//         return state.products.filter(
-//             (product) => product.category._id === currentCategory
-//         );
-//     }
-
-//     return (
-//         <Container>
-//             <h1>All products</h1>
-//             {state.products.length ? (
-//                 <div>
-//                     {filterProducts().map((product) => (
-//                         <Product
-//                             key={product._id}
-//                             _id={product._id}
-//                             image={product.image}
-//                             title={product.title}
-//                             price={product.price}
-//                             quantity={product.quantity}
-//                         />
-//                     ))}
-//                 </div>
-//             ) : (
-//                 <h3>There are no products yet.</h3>
-//             )}
-//         </Container>
-//     )
-// }
 
 export default Products
