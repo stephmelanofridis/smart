@@ -22,10 +22,7 @@
   "dependencies": {
     "@aws-amplify/analytics": "^5.1.2",
     "@aws-amplify/interactions": "^4.0.22",
-    "@aws-amplify/storage": "^4.4.5",
-    "@aws-amplify/ui": "^2.0.3",
     "@aws-amplify/ui-react": "^1.2.22",
-    "@aws-amplify/xr": "^3.0.22",
     "apollo-server": "^3.4.0",
     "apollo-server-express": "^3.4.0",
     "aws-amplify": "^4.3.4",
