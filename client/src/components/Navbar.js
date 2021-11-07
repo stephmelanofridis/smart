@@ -43,28 +43,6 @@ const Right = styled.div`
     padding-top: 20px;
     ${medium({ justifyContent: 'center', flex: 2 })}
 `
-// const Language = styled.span`
-//     font-size: 14px;
-//     cursor: pointer;
-//     &:hover {
-//         font-weight: 700;
-//         text-shadow: var(--darkpink);
-//         cursor: pointer;
-//     }
-//     ${medium({ display: 'none' })}
-// `
-// const SearchContainer = styled.div`
-//     border: 0.5px solid lightgrey;
-//     display: flex;
-//     align-items: center;
-//     margin-left: 25px;
-//     padding: 5px;
-// `
-// const Input = styled.input`
-//     border: none;
-//     background-color: var(--white);
-//     ${medium({ width: '50px' })}
-// `
 const MenuItem = styled.div`
     font-size: 14px:
     cursor: point;
@@ -81,7 +59,7 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <Left>
-                    <Logo src={logo} alt='Black ink blot with smart written in the centre' />
+                    <Link to='/'><Logo src={logo} alt='Black ink blot with smart written in the centre' /></Link>
                 </Left>
                 <Center></Center>
                 <Right>

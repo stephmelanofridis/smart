@@ -7,18 +7,18 @@ class AuthService {
 
     loggedIn() {
         const token = this.getToken();
-        return !!token && !this.isTokenExpired(token);
+        return token && !this.isTokenExpired(token) ? true : false;
     }
 
     isTokenExpired(token) {
-        try {
-            const decoded = decode(token);
-            if (decoded.exp < Date.now() / 1000) {
-                return true;
-            } else return false;
-        } catch (err) {
-            return false;
+        const decoded = decode(token);
+
+        if (decoded.exp < Date.now() / 1000) {
+            localStorage.removeItem('id_token');
+            return true;
         }
+
+        return false;
     }
 
     getToken() {
@@ -32,7 +32,7 @@ class AuthService {
 
     logout() {
         localStorage.removeItem('id_token');
-        window.location.assign('/');
+        window.location.reload();
     }
 }
 

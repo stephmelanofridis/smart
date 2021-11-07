@@ -10,6 +10,7 @@ import CartPage from './pages/CartPage';
 import ProductList from './pages/ProductList';
 import ProductPage from './pages/ProductPage';
 import './App.css';
+import NewProduct from './pages/NewProduct';
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -43,6 +44,7 @@ const App = () => {
               <Route exact path='/cart' component={CartPage} />
               <Route exact path='/productlist' component={ProductList} />
               <Route exact path='/productpage' component={ProductPage} />
+              <Route exact path='/newproduct' component={NewProduct} />
             </Switch>
           </StoreProvider>
         </div>

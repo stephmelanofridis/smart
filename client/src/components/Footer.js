@@ -4,8 +4,7 @@ import logo from '../assets/logo-cream.svg';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
-
-
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -70,7 +69,7 @@ const Footer = () => {
     return (
         <Container>
             <Left>
-                <Logo src={logo} alt='Cream ink blot with smart written in the centre' />
+                <Link to='/'><Logo src={logo} alt='Cream ink blot with smart written in the centre' /></Link>
             </Left>
             <Center>
                 <SocialContainer>

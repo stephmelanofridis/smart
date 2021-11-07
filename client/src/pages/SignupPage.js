@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Authentication from '../utils/authentication';
+import Announcement from '../components/Announcement';
+import Navbar from '../components/Navbar';
 
 const Container = styled.div`
     width: 100vw;
@@ -16,14 +18,17 @@ const Container = styled.div`
     justify-content: center;
 `
 const Wrapper = styled.div`
+    border-radius: 6px;
+    position: relative;
+    top: -100px;
     padding: 20px;
     width: 40%;
     background-color: var(--white);
 `
 const Title = styled.h1`
-    font-size: 24px;
-    font-weight: 300;
-    text-align: center;
+font-size: 35px;
+font-weight: 300;
+text-align: center;
 `
 const Form = styled.form`
     display: flex;
@@ -35,22 +40,26 @@ const Input = styled.input`
     margin: 20px 10px 0 0;
     padding: 10px;
 `
-const Agreement = styled.span`
-    font-size: 12px;
-    margin: 20px 0;
-`
 const ButtonContainer = styled.div`
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `
 const Button = styled.button`
+    margin: 30px 20px 20px 20px;
     width: 40%
     border: none;
     padding: 15px 20px;
     background-color: var(--darkpink);
     color: var(--white);
+
+    &:hover{
+        background-color: var(--darkpink);
+        opacity:  0.9;    
+    } 
+
 `
 
 function Signup(props) {
@@ -80,21 +89,24 @@ function Signup(props) {
 
 
     return (
-        <Container>
-            <Wrapper>
-                <Title>Sign Up</Title>
-                <Form onSubmit={handleFormSubmit}>
-                    <Input placeholder='Email' name='email' type='email' id='email' onChange={handleChange} />
-                    <Input placeholder='Username' name='username' type='username' id='username' onChange={handleChange} />
-                    <Input placeholder='Password' name='password' type='password' id='password' onChange={handleChange} />
-                </Form>
-                <ButtonContainer>
-                    <Link to='/login'>Already signed up</Link>
-                    <Agreement>By creating an account, you verify that you have read and agree to the following Terms and Conditions</Agreement>
-                    <Button type='submit'>Create Account</Button>
-                </ButtonContainer>
-            </Wrapper>
-        </Container>
+        <>
+            <Announcement />
+            <Navbar />
+            <Container>
+                <Wrapper>
+                    <Title>Sign Up</Title>
+                    <Form onSubmit={handleFormSubmit}>
+                        <Input placeholder='Email' name='email' type='email' id='email' onChange={handleChange} />
+                        <Input placeholder='Username' name='username' type='username' id='username' onChange={handleChange} />
+                        <Input placeholder='Password' name='password' type='password' id='password' onChange={handleChange} />
+                    </Form>
+                    <ButtonContainer>
+                        <Link to='/login'>Already signed up</Link>
+                        <Button type='submit'>Create Account</Button>
+                    </ButtonContainer>
+                </Wrapper>
+            </Container>
+        </>
     )
 }
 

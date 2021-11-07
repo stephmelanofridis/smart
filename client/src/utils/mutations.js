@@ -48,28 +48,18 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const ADD_PRODUCT = gql`
-//   mutation addProduct(
-//       $title: String!
-//       $description: String!
-//       $image: String!
-//       $category: String!
-//       $price: Float!
-//       $inStock: Boolean!
-//   ) {
-//     addProduct(
-//       title: $title
-//       description: $description
-//       image: $image: 
-//       category: $category
-//       price: $price
-//       inStock: $inStock
-//     ) {
-//         token
-//         product {
-//           _id
-//         }
-//       }
-//   }
-// `;
-
+export const ADD_PRODUCT = gql`
+  mutation addProduct(
+    $title: String!
+      $description: String!
+      $image: String!
+      $category: String!
+      $price: Float!
+      $inStock: Boolean!
+  ) {
+      token
+      product {
+        _id
+      }
+    }
+`;

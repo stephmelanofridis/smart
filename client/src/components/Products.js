@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import Product from './Product';
 import styled from 'styled-components';
 import * as Constants from '../utils/constants';
+import { useStoreContext } from '../utils/GlobalState';
+import { UPDATE_PRODUCTS } from '../utils/siteActions';
+import { idbPromise } from '../utils/helpers';
 import axios from 'axios';
 
 const Container = styled.div`
