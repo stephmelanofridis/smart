@@ -51,14 +51,8 @@ const Image = styled.img`
     max-height: 100vh;
     overflow-x: hidden;
 `
-// const InfoContainer = styled.div`
-//     flex: 1;
-//     padding: 50px;
-// `
-// const Title = styled.h1`
-//     font-size: 70px;
-// `
 const Description = styled.p`
+    background: ${props => props.background = 'dark' || '(rgba(0, 0, 0, 0.5)'};
     color: white;
     margin: 50px 0px;
     font-size: 25px;
@@ -73,23 +67,6 @@ const Description = styled.p`
     padding: 12px 24px;
     text-shadow: 2px 2px black;
     ${medium({ fontSize: '15px', letterSpacing: '2px' })}
-`
-const Button = styled.button`
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    font-weight: 700;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-shadow: 2px 2px #bb5352;
-    ${medium({ fontSize: '12px', top: '70%', left: '73%' })}
 `
 
 const Carousel = () => {
@@ -113,15 +90,13 @@ const Carousel = () => {
                 <Slide>
                     <ImgContainer>
                         <Image src={websiteData.carouselCombo1} />
-                        <Description>Original collage artwork made from a variety of modern and vintage magazines.</Description>
-                        <Button>SHOP NOW</Button>
+                        <Description>We sell original collage artwork made from a variety of modern and vintage magazines.</Description>
                     </ImgContainer>
                 </Slide>
                 <Slide>
                     <ImgContainer>
                         <Image src={websiteData.carouselCombo2} />
-                        <Description>Restored used and antique furniture.</Description>
-                        <Button>SHOP NOW</Button>
+                        <Description background='dark'>Shop our range of restored antique furniture.</Description>
                     </ImgContainer>
                 </Slide>
             </Wrapper>
