@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Category {
     _id: ID!
     title: String!
+    image: String!
   }
 
   type Order {

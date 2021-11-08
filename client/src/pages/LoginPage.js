@@ -117,13 +117,13 @@ const Login = (props) => {
                             </ButtonContainer>
 
                             <LinkContainer>
-                                <Link to='/signup'>Create a new account</Link>
+                                <Link to='/signup'>No account yet? Sign up instead.</Link>
                             </LinkContainer>
                         </Form>
                     )}
                     {error ? (
                         <div>
-                            <p className="error-text">The provided credentials are incorrect</p>
+                            <p className="error-text">The provided credentials are incorrect, please try again.</p>
                         </div>
                     ) : null}
                 </Wrapper>

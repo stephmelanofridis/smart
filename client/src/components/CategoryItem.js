@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { large } from '../responsive';
-import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 flex: 1;
@@ -62,7 +61,7 @@ const CategoryItem = ({ item }) => {
             <Image src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Button><Link to='productlist' title={item.title} id={item.id}>Browse</Link></Button>
+                <Button>Browse</Button>
             </Info>
         </Container>
     )

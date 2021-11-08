@@ -19,7 +19,7 @@ db.once('open', async () => {
             title: 'Original Collage Art',
             description:
                 'Original collage art created by myself',
-            image: 'cookie-tin.jpg',
+            image: 'placeholder.jpg',
             category: categories[0]._id,
             price: 50.00,
         },
@@ -27,9 +27,25 @@ db.once('open', async () => {
             title: 'Restored furniture',
             description:
                 'Antique furniture restored by myself',
-            image: 'canned-coffee.jpg',
+            image: 'placeholder.jpg',
             category: categories[1]._id,
             price: 100.00,
+        },
+        {
+            title: 'Orignal Collage 2',
+            description:
+                'Original collage art created by myself',
+            image: 'placeholder.jpg',
+            category: categories[0]._id,
+            price: 200.00,
+        },
+        {
+            title: 'Restored furniture 2',
+            description:
+                'Antique furniture restored by myself',
+            image: 'placeholder.jpg',
+            category: categories[0]._id,
+            price: 200.00,
         }
     ]);
 

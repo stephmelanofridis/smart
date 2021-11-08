@@ -74,7 +74,7 @@ function Products() {
             {data.products.map(item => (
                 <Wrapper>
                     <ImgContainer>
-                        <Image key={item.Image} alt={item.title} src={`/images/${item.image}`} />
+                        <Image key={item.Image} alt={item.title} src={`images/${item.image}`} />
                     </ImgContainer>
                     <InfoContainer>
                         <Title key={item.Title}>{item.title}</Title>
