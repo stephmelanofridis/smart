@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_PRODUCT, QUERY_USER } from '../utils/mutations';
 import styled from 'styled-components';
-import websiteData from '../utils/websiteData';
 import Announcement from '../components/Announcement';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
