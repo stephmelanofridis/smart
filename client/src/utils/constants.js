@@ -12,3 +12,13 @@ export const GET_PRODUCTS_QUERY = `  {
       }
     }
   }`
+  ;
+
+export const QUERY_CATEGORIES = `
+  {
+    categories {
+      _id
+      title
+    }
+  }
+`;

@@ -1,23 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import websiteData from '../utils/websiteData';
 import CategoryItem from '../components/CategoryItem';
 import { large, medium } from '../responsive';
+import * as Constants from '../utils/constants';
+import axios from 'axios';
 
-const Categories = () => {
-
-    const Container = styled.div`
+const Container = styled.div`
         display: flex;
         padding: 20px;
         justify-content: space-between;
         ${large({ display: 'flex', flexDirection: 'column' })}
     `
+
+const Categories = () => {
+    const [data, setData] = useState({ categories: [] });
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const queryResult = await axios.post(
+                Constants.GRAPHQL_API, {
+                query: Constants.QUERY_CATEGORIES
+            }
+            );
+
+            const result = queryResult.data.data;
+            setData({ categories: result.categories })
+        };
+
+        fetchData();
+    })
+
     return (
         <Container>
-            {websiteData.categories.map(item => (
+            {data.categories.map(item => (
                 <CategoryItem item={item} key={item.id} />
             ))}
         </Container>
+        // <Container>
+        //     {websiteData.categories.map(item => (
+        //         <CategoryItem item={item} key={item.id} />
+        //     ))}
+        // </Container>
     )
 }
 

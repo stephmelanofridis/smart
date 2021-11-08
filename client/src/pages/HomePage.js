@@ -7,6 +7,7 @@ import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import '../App.css';
+import Categories from '../components/Categories';
 
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
             <Announcement />
             <Navbar />
             <Carousel />
-            {/* <Categories /> */}
+            <Categories />
             <Products />
             <Newsletter />
             <Footer />
