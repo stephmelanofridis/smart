@@ -63,30 +63,42 @@ const Button = styled.button`
 `
 
 function Signup(props) {
-    const [formState, setFormState] = useState({ username: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
+
+    const [userFormData, setUserFormData] = useState({ email: '', password: '', name: '', phoneNumber: '', address: '' });
+    const [validated] = useState(false);
+
+
+    const [addUser, { error, data }] = useMutation(ADD_USER);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name]: value });
+    };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        const mutationResponse = await addUser({
-            variables: {
-                email: formState.email,
-                password: formState.password,
-                username: formState.username,
-            },
-        });
-        const token = mutationResponse.data.addUser.token;
-        Authentication.login(token);
-    };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
 
+        try {
+            const { data } = await addUser({
+                variables: {
+                    email: '',
+                    username: '',
+                    password: ''
+                },
+            }
+            );
+
+            Authentication.login(data.addUser.token);
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     return (
         <>
@@ -95,10 +107,10 @@ function Signup(props) {
             <Container>
                 <Wrapper>
                     <Title>Sign Up</Title>
-                    <Form onSubmit={handleFormSubmit}>
-                        <Input placeholder='Email' name='email' type='email' id='email' onChange={handleChange} />
-                        <Input placeholder='Username' name='username' type='username' id='username' onChange={handleChange} />
-                        <Input placeholder='Password' name='password' type='password' id='password' onChange={handleChange} />
+                    <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                        <Input placeholder='Email' name='email' type='email' id='email' onChange={handleInputChange} />
+                        <Input placeholder='Username' name='username' type='username' id='username' onChange={handleInputChange} />
+                        <Input placeholder='Password' name='password' type='password' id='password' onChange={handleInputChange} />
                     </Form>
                     <ButtonContainer>
                         <Link to='/login'>Already signed up</Link>
