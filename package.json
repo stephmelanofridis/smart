@@ -16,10 +16,6 @@
     "author": "Steph Melanofridis",
     "license": "ISC",
     "devDependencies": {
-        "concurrently": "^5.3.0",
-        "fsevents": "* npm i -f"
-    },
-    "dependencies": {
-        "aws-amplify": "^1.2.4"
+        "concurrently": "^5.3.0"
     }
 }

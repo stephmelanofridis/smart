@@ -23,12 +23,8 @@
   },
   "homepage": "https://github.com/stephmelanofridis/smart#readme",
   "dependencies": {
-    "@aws-amplify/analytics": "^5.1.2",
-    "@aws-amplify/interactions": "^4.0.22",
-    "@aws-amplify/ui-react": "^1.2.22",
     "apollo-server": "^3.4.0",
     "apollo-server-express": "^3.4.0",
-    "aws-amplify": "^4.3.4",
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -38,7 +34,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",
-    "stripe": "^8.186.1",
     "uuid": "^8.3.2",
     "webpack": "^5.62.1"
   }
