@@ -91,8 +91,7 @@ function Signup(props) {
                     username: '',
                     password: ''
                 },
-            }
-            );
+            });
 
             Authentication.login(data.addUser.token);
         } catch (err) {
