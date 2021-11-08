@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import websiteData from '../utils/websiteData';
 import CategoryItem from '../components/CategoryItem';
-import { large, medium } from '../responsive';
+import { large } from '../responsive';
 import * as Constants from '../utils/constants';
 import axios from 'axios';
+
 
 const Container = styled.div`
         display: flex;
@@ -29,7 +29,7 @@ const Categories = () => {
         };
 
         fetchData();
-    })
+    });
 
     return (
         <Container>
@@ -37,11 +37,6 @@ const Categories = () => {
                 <CategoryItem item={item} key={item.id} />
             ))}
         </Container>
-        // <Container>
-        //     {websiteData.categories.map(item => (
-        //         <CategoryItem item={item} key={item.id} />
-        //     ))}
-        // </Container>
     )
 }
 

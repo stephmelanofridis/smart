@@ -52,11 +52,12 @@ const Image = styled.img`
     overflow-x: hidden;
 `
 const Description = styled.p`
-    background: ${props => props.background = 'dark' || '(rgba(0, 0, 0, 0.5)'};
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
     color: white;
     margin: 50px 0px;
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 35px;
+    font-weight: 400;
     letter-spacing: 5px;
     z-index: 1;
     position: absolute;
@@ -96,7 +97,7 @@ const Carousel = () => {
                 <Slide>
                     <ImgContainer>
                         <Image src={websiteData.carouselCombo2} />
-                        <Description background='dark'>Shop our range of restored antique furniture.</Description>
+                        <Description>Shop our range of restored antique furniture.</Description>
                     </ImgContainer>
                 </Slide>
             </Wrapper>

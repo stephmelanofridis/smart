@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Product from './Product';
 import styled from 'styled-components';
 import * as Constants from '../utils/constants';
-import { useStoreContext } from '../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../utils/siteActions';
-import { idbPromise } from '../utils/helpers';
 import axios from 'axios';
 
 const Container = styled.div`
@@ -78,7 +74,7 @@ function Products() {
             {data.products.map(item => (
                 <Wrapper>
                     <ImgContainer>
-                        <Image alt={item.title} src={item.image} />
+                        <Image key={item.Image} alt={item.title} src={`/images/${item.image}`} />
                     </ImgContainer>
                     <InfoContainer>
                         <Title key={item.Title}>{item.title}</Title>
