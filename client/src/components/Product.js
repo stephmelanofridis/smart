@@ -35,7 +35,7 @@ const Container = styled.div`
     }
 `
 const Image = styled.div`
-    // height: 75%;
+    height: 75%;
 `
 const Icon = styled.div`
     width: 40px;
