@@ -26,11 +26,11 @@ Technologies used to make this site were:
 * Mongoose
 * JWT
 * Concurrently
+* Heroku
 
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/82196946/140875578-d1bd2968-968c-4405-82d6-49f8f97e0986.png)
-
 
 ![image](https://user-images.githubusercontent.com/82196946/140875797-271474dc-3e03-4470-98fe-70d268f8edf4.png)
 
