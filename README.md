@@ -31,6 +31,16 @@ Technologies used to make this site were:
 
 ![image](https://user-images.githubusercontent.com/82196946/140875578-d1bd2968-968c-4405-82d6-49f8f97e0986.png)
 
+
+![image](https://user-images.githubusercontent.com/82196946/140875797-271474dc-3e03-4470-98fe-70d268f8edf4.png)
+
+![image](https://user-images.githubusercontent.com/82196946/140875924-3cebda78-b301-4e26-8db8-e52508a3307b.png)
+
+![image](https://user-images.githubusercontent.com/82196946/140876494-1d1e5456-ad04-4b09-81f5-fe1c83c21e75.png)
+
+![image](https://user-images.githubusercontent.com/82196946/140876603-6e89c1d3-9df5-4a9e-aad4-2e6ddcf14dbe.png)
+
+
 ## Deployed Site
 
 Link to deployed site: https://steph-smartshop.herokuapp.com/
