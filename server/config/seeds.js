@@ -18,34 +18,34 @@ db.once('open', async () => {
         {
             title: 'Original Collage Art',
             description:
-                'Original collage art created by myself',
-            image: 'placeholder.jpg',
+                'Original collage made with new and vintage magazines - Matte finish.',
+            image: 'art1.jpg',
             category: categories[0]._id,
-            price: 50.00,
+            price: 100.00,
         },
         {
             title: 'Restored furniture',
             description:
-                'Antique furniture restored by myself',
-            image: 'placeholder.jpg',
+                'Bedside drawers restored in the colour black - Gloss finish.',
+            image: 'furniture1.jpg',
             category: categories[1]._id,
-            price: 100.00,
+            price: 65.00,
         },
         {
             title: 'Orignal Collage 2',
             description:
-                'Original collage art created by myself',
-            image: 'placeholder.jpg',
+                'Original magazine collage - Matte finish.',
+            image: 'art2.jpg',
             category: categories[0]._id,
-            price: 200.00,
+            price: 80.00,
         },
         {
             title: 'Restored furniture 2',
             description:
-                'Antique furniture restored by myself',
-            image: 'placeholder.jpg',
+                'Step stool restored in the colour black featuring floral decoupage - Matte finish.',
+            image: 'furniture2.jpg',
             category: categories[0]._id,
-            price: 200.00,
+            price: 60.00,
         }
     ]);
 
