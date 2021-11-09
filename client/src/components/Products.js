@@ -15,10 +15,14 @@ const Wrapper = styled.div`
 `
 const ImgContainer = styled.div`
     flex: 1;
+    align-items: center;
+    justify-content: center;
 `
 const Image = styled.img`
-    width: 100%;
+    width: 70%;
     height: 70vh;
+    position: relative;
+    left: 20vh;
 `
 const InfoContainer = styled.div`
     flex: 1;
