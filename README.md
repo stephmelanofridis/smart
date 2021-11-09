@@ -43,7 +43,7 @@ Technologies used to make this site were:
 
 ## Deployed Site
 
-Visit my deployed site: https://steph-smartshop.herokuapp.com/
+Link to deployed site: https://steph-smartshop.herokuapp.com/
 
 ## License
 
