@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/smartdb', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smartdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
