@@ -14,7 +14,8 @@ For the final project we were required to create an application using React for 
 
 ## Technologies Used
 
-Technologies used to make this site were: 
+The technologies used to make this site were: 
+
 * React
 * Styled-components
 * Material UI
