@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://stephmelanofridis:Chinquapin42@cluster0.fwqzx.mongodb.net/smartdb?retryWrites=true&w=majority' || 'mongodb://localhost/smartdb', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/smartdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
